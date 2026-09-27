@@ -1,0 +1,14 @@
+Design Memo
+
+A stack is the right data structure for an undo/redo feature because undo operations need to follow a Last In, First Out, or LIFO, order. 
+The most recent action is usually the first action that a user wants to undo. 
+For example, if a user types text, adds an image, and saves a document, the save action is at the top of the undo stack and is removed first. 
+When an action is undone, it is moved to a second stack called the redo stack. If the user chooses redo, the most recently undone action is moved back to the undo stack. 
+Using two stacks makes it easy to keep track of this action history.
+A queue is better for a help desk because customers should be helped in the same order that they arrive. A queue uses First In, First Out, or FIFO, behavior. 
+The first customer added to the waiting line is stored at the front of the queue and is the first customer removed when a support worker is ready to help someone. 
+New customers are added to the rear of the queue. This is fair because later customers do not skip ahead of people who were already waiting.
+My custom stack and queue differ from Python’s built-in lists because they use linked nodes instead of an indexed list. 
+Each Node stores a value and a pointer to the next Node. The stack only adds and removes values from the top. 
+The queue adds values at the rear and removes values from the front. 
+Python lists can store many types of data and allow access by index, but this custom implementation limits operations to the behavior required by each data structure.
